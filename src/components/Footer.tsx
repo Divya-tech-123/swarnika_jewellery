@@ -132,16 +132,16 @@ export function Footer() {
           hallmarked gold · IGI certified diamonds.
         </p>
         <p className="mt-2 text-center text-[0.7rem] tracking-wide text-muted-foreground/80 sm:text-xs">
-  Powered by{" "}
-  <a
-    href="https://autofyagency.vercel.app/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="font-semibold text-gold-deep transition-colors hover:underline"
-  >
-    Autofy.ai
-  </a>
-</p>
+          Powered by{" "}
+          <a
+            href="https://autofyagency.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-gold-deep transition-colors hover:underline"
+          >
+            Autofy.ai
+          </a>
+        </p>
       </div>
     </footer>
   );
