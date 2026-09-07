@@ -24,7 +24,7 @@ export function PromoBanner() {
           </p>
           <Link
             to="/offers"
-            className="mt-8 inline-block rounded-full bg-primary px-8 py-3.5 text-sm tracking-wide text-primary-foreground shadow-soft transition-all duration-300 hover:bg-brown hover:shadow-lift"
+            className="btn-luxury mt-8 inline-block rounded-full bg-primary px-8 py-3.5 text-sm tracking-wide text-primary-foreground shadow-soft hover:bg-brown hover:shadow-lift"
           >
             Shop Offers
           </Link>

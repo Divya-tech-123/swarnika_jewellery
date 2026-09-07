@@ -18,12 +18,12 @@ export function FeatureCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55, delay: index * 0.09 }}
-      className="group rounded-3xl border border-border/70 bg-card p-6 text-center shadow-soft transition-all duration-300 hover:border-gold/50 hover:shadow-lift"
+      className="card-luxury-lift group rounded-3xl border border-border/70 bg-card p-6 text-center shadow-soft hover:border-gold/50"
     >
-      <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-gold/40 text-gold-deep transition-transform duration-300 group-hover:scale-105">
+      <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-gold/40 text-gold-deep transition-all duration-300 group-hover:scale-108 group-hover:border-gold group-hover:bg-secondary/60">
         <Icon size={22} strokeWidth={1.5} />
       </span>
-      <h3 className="mt-4 font-display text-lg text-foreground">{title}</h3>
+      <h3 className="mt-4 font-display text-lg text-foreground transition-colors duration-300 group-hover:text-gold-deep">{title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
     </motion.div>
   );

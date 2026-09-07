@@ -16,12 +16,12 @@ const links = [
 
 function Logo() {
   return (
-    <Link to="/" className="flex shrink-0 items-center gap-2">
-      <span className="grid h-9 w-9 place-items-center rounded-full border border-gold/60 font-display text-lg text-gold-deep">
+    <Link to="/" className="group flex shrink-0 items-center gap-2">
+      <span className="grid h-9 w-9 place-items-center rounded-full border border-gold/60 font-display text-lg text-gold-deep transition-all duration-300 group-hover:scale-105 group-hover:border-gold">
         S
       </span>
       <span className="leading-none">
-        <span className="block font-display text-xl tracking-wide text-foreground">Swarnika</span>
+        <span className="block font-display text-xl tracking-wide text-foreground transition-colors duration-300 group-hover:text-gold-deep">Swarnika</span>
         <span className="block text-[0.6rem] tracking-[0.3em] text-gold-deep">JEWELLERS</span>
       </span>
     </Link>
@@ -53,7 +53,7 @@ export function Navbar() {
         <button
           aria-label="Open menu"
           onClick={() => setOpen(true)}
-          className="grid h-10 w-10 place-items-center rounded-full text-foreground transition-colors hover:bg-secondary"
+          className="icon-btn-subtle grid h-10 w-10 place-items-center rounded-full text-foreground hover:bg-secondary"
         >
           <Menu size={20} />
         </button>
@@ -64,14 +64,14 @@ export function Navbar() {
           <button
             aria-label="Search"
             onClick={() => setSearchOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full transition-colors hover:bg-secondary"
+            className="icon-btn-subtle grid h-10 w-10 place-items-center rounded-full text-foreground hover:bg-secondary hover:text-gold-deep"
           >
             <Search size={19} />
           </button>
           <Link
             to="/cart"
             aria-label="Cart"
-            className="relative grid h-10 w-10 place-items-center rounded-full transition-colors hover:bg-secondary"
+            className="icon-btn-subtle relative grid h-10 w-10 place-items-center rounded-full text-foreground hover:bg-secondary hover:text-gold-deep"
           >
             <ShoppingBag size={19} />
             {cartCount > 0 ? <Badge value={cartCount} /> : null}
@@ -87,7 +87,7 @@ export function Navbar() {
               key={l.to}
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
-              className="rounded-full px-3 py-1.5 font-sans text-[0.82rem] font-medium tracking-wide text-muted-foreground transition-colors hover:text-gold-deep data-[status=active]:text-gold-deep data-[status=active]:font-semibold"
+              className="nav-link-indicator rounded-full px-3 py-1.5 font-sans text-[0.82rem] font-medium tracking-wide text-muted-foreground transition-colors hover:text-gold-deep data-[status=active]:text-gold-deep data-[status=active]:font-semibold"
             >
               {l.label}
             </Link>
@@ -97,14 +97,14 @@ export function Navbar() {
           <button
             aria-label="Search"
             onClick={() => setSearchOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full transition-colors hover:bg-secondary"
+            className="icon-btn-subtle grid h-10 w-10 place-items-center rounded-full text-foreground hover:bg-secondary hover:text-gold-deep"
           >
             <Search size={19} />
           </button>
           <Link
             to="/wishlist"
             aria-label="Wishlist"
-            className="relative grid h-10 w-10 place-items-center rounded-full transition-colors hover:bg-secondary"
+            className="icon-btn-subtle relative grid h-10 w-10 place-items-center rounded-full text-foreground hover:bg-secondary hover:text-gold-deep"
           >
             <Heart size={19} />
             {wishlist.length > 0 ? <Badge value={wishlist.length} /> : null}
@@ -112,7 +112,7 @@ export function Navbar() {
           <Link
             to="/cart"
             aria-label="Cart"
-            className="relative grid h-10 w-10 place-items-center rounded-full transition-colors hover:bg-secondary"
+            className="icon-btn-subtle relative grid h-10 w-10 place-items-center rounded-full text-foreground hover:bg-secondary hover:text-gold-deep"
           >
             <ShoppingBag size={19} />
             {cartCount > 0 ? <Badge value={cartCount} /> : null}
@@ -120,7 +120,7 @@ export function Navbar() {
           <Link
             to="/account"
             aria-label="Account"
-            className="grid h-10 w-10 place-items-center rounded-full transition-colors hover:bg-secondary"
+            className="icon-btn-subtle grid h-10 w-10 place-items-center rounded-full text-foreground hover:bg-secondary hover:text-gold-deep"
           >
             <User size={19} />
           </Link>
@@ -128,7 +128,7 @@ export function Navbar() {
             to="/admin"
             aria-label="Admin Dashboard"
             title="Admin Orders"
-            className="ml-1 hidden items-center gap-1 rounded-full border border-gold/50 bg-secondary/60 px-3 py-1.5 font-sans text-xs font-medium text-gold-deep transition-all hover:bg-gold-deep hover:text-white sm:flex"
+            className="btn-luxury ml-1 hidden items-center gap-1 rounded-full border border-gold/50 bg-secondary/60 px-3 py-1.5 font-sans text-xs font-medium text-gold-deep hover:bg-gold-deep hover:text-white sm:flex"
           >
             Admin
           </Link>

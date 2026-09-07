@@ -149,7 +149,7 @@ function CartPage() {
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-108"
+                    className="img-luxury-zoom h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-104"
                   />
                   {product.mrp ? (
                     <span className="absolute top-2 left-2 rounded-full bg-gold-deep px-2 py-0.5 text-[0.6rem] font-bold text-primary-foreground">
@@ -366,14 +366,14 @@ function CartPage() {
               <button
                 type="button"
                 onClick={() => router.navigate({ to: "/checkout" })}
-                className="flex w-full items-center justify-center gap-2 rounded-full border border-gold-deep bg-primary py-4 font-sans text-xs font-medium tracking-wide text-primary-foreground uppercase shadow-soft transition-all hover:bg-brown active:scale-98"
+                className="btn-luxury flex w-full items-center justify-center gap-2 rounded-full border border-gold-deep bg-primary py-4 font-sans text-xs font-medium tracking-wide text-primary-foreground uppercase shadow-soft hover:bg-brown"
               >
                 Proceed to Checkout <ArrowRight size={16} />
               </button>
 
               <Link
                 to="/collections"
-                className="flex w-full items-center justify-center gap-1.5 rounded-full border border-gold/40 bg-background py-3 font-sans text-xs font-medium text-gold-deep transition-all hover:bg-secondary"
+                className="btn-luxury flex w-full items-center justify-center gap-1.5 rounded-full border border-gold/40 bg-background py-3 font-sans text-xs font-medium text-gold-deep hover:bg-secondary"
               >
                 Continue Shopping
               </Link>

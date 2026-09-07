@@ -45,7 +45,7 @@ function WishlistPage() {
           </p>
           <Link
             to="/collections"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-xs font-medium text-primary-foreground shadow-soft transition-all hover:bg-brown"
+            className="btn-luxury mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-xs font-medium text-primary-foreground shadow-soft hover:bg-brown"
           >
             Explore Jewellery <ArrowRight size={14} />
           </Link>

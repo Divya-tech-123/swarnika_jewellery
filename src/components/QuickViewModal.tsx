@@ -116,7 +116,7 @@ export function QuickViewModal() {
           <button
             aria-label="Close modal"
             onClick={closeQuickView}
-            className="absolute top-4 right-4 z-20 grid h-10 w-10 place-items-center rounded-full bg-background/80 text-foreground backdrop-blur-md transition-all duration-200 hover:bg-gold hover:text-white"
+            className="icon-btn-subtle absolute top-4 right-4 z-20 grid h-10 w-10 place-items-center rounded-full bg-background/80 text-foreground backdrop-blur-md transition-all duration-250 hover:bg-gold-deep hover:text-white"
           >
             <X size={20} />
           </button>
@@ -129,7 +129,7 @@ export function QuickViewModal() {
                 <img
                   src={quickViewProduct.image}
                   alt={quickViewProduct.name}
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  className="img-luxury-zoom h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-104"
                 />
 
                 {discountPercent ? (
@@ -232,7 +232,7 @@ export function QuickViewModal() {
                             key={v}
                             type="button"
                             onClick={() => setSelectedVariant(v)}
-                            className={`rounded-full border px-3.5 py-1.5 text-xs font-medium transition-all ${
+                            className={`rounded-full border px-3.5 py-1.5 text-xs font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
                               active
                                 ? "border-gold-deep bg-primary text-primary-foreground shadow-sm"
                                 : "border-border/80 bg-background text-foreground hover:border-gold"
@@ -253,7 +253,7 @@ export function QuickViewModal() {
                     <button
                       aria-label="Decrease quantity"
                       onClick={() => setQty((prev) => Math.max(1, prev - 1))}
-                      className="grid h-8 w-8 place-items-center rounded-full transition-colors hover:bg-background text-foreground"
+                      className="grid h-8 w-8 place-items-center rounded-full transition-all duration-200 hover:bg-background hover:scale-110 active:scale-95 text-foreground"
                     >
                       <Minus size={14} />
                     </button>
@@ -263,7 +263,7 @@ export function QuickViewModal() {
                     <button
                       aria-label="Increase quantity"
                       onClick={() => setQty((prev) => prev + 1)}
-                      className="grid h-8 w-8 place-items-center rounded-full transition-colors hover:bg-background text-foreground"
+                      className="grid h-8 w-8 place-items-center rounded-full transition-all duration-200 hover:bg-background hover:scale-110 active:scale-95 text-foreground"
                     >
                       <Plus size={14} />
                     </button>
@@ -277,7 +277,7 @@ export function QuickViewModal() {
                   <button
                     aria-label={wished ? "Remove from wishlist" : "Add to wishlist"}
                     onClick={() => toggleWishlist(quickViewProduct.id)}
-                    className={`grid h-11 w-11 shrink-0 place-items-center rounded-full border transition-all ${
+                    className={`icon-btn-subtle grid h-11 w-11 shrink-0 place-items-center rounded-full border transition-all ${
                       wished
                         ? "border-destructive/60 bg-destructive/10 text-destructive"
                         : "border-gold/40 bg-background text-muted-foreground hover:border-gold hover:text-foreground"
@@ -289,7 +289,7 @@ export function QuickViewModal() {
                   <button
                     type="button"
                     onClick={handleAddToCart}
-                    className="flex flex-1 items-center justify-center gap-2 rounded-full border border-gold-deep bg-primary px-5 py-3 font-sans text-xs font-medium tracking-wide text-primary-foreground shadow-soft transition-all hover:bg-brown active:scale-98"
+                    className="btn-luxury flex flex-1 items-center justify-center gap-2 rounded-full border border-gold-deep bg-primary px-5 py-3 font-sans text-xs font-medium tracking-wide text-primary-foreground shadow-soft hover:bg-brown"
                   >
                     {addedAnimation ? (
                       <>
@@ -305,7 +305,7 @@ export function QuickViewModal() {
                   <button
                     type="button"
                     onClick={handleBuyNow}
-                    className="flex flex-1 items-center justify-center gap-2 rounded-full border border-gold/60 bg-background px-5 py-3 font-sans text-xs font-medium tracking-wide text-gold-deep transition-all hover:bg-gold-deep hover:text-white active:scale-98"
+                    className="btn-luxury flex flex-1 items-center justify-center gap-2 rounded-full border border-gold/60 bg-background px-5 py-3 font-sans text-xs font-medium tracking-wide text-gold-deep hover:bg-gold-deep hover:text-white"
                   >
                     <Zap size={16} /> Buy Now
                   </button>

@@ -150,3 +150,128 @@
     display: none;
   }
 }
+
+/* Navigation underline expanding from center */
+.nav-link-indicator {
+  position: relative;
+  transition: color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-link-indicator::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: calc(100% - 1.25rem);
+  height: 1.5px;
+  background-color: var(--gold-deep);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+  opacity: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .nav-link-indicator:hover::after {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+}
+
+.nav-link-indicator[data-status="active"]::after {
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
+}
+
+/* Luxury button hover & active micro-interactions */
+.btn-luxury {
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.25s ease;
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .btn-luxury:hover {
+    transform: translateY(-1px) scale(1.025);
+  }
+}
+
+.btn-luxury:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Subtle icon hover transition */
+.icon-btn-subtle {
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .icon-btn-subtle:hover {
+    transform: scale(1.08);
+  }
+  .icon-btn-subtle:hover svg {
+    transform: scale(1.06);
+  }
+}
+
+.icon-btn-subtle:active {
+  transform: scale(0.95);
+}
+
+.icon-btn-subtle svg {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Smooth zoom for images in cards without overflowing */
+.img-luxury-zoom {
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .group:hover .img-luxury-zoom,
+  a:hover .img-luxury-zoom {
+    transform: scale(1.045);
+  }
+}
+
+/* Card luxury lift effect */
+.card-luxury-lift {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease;
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .card-luxury-lift:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      0 20px 38px -14px oklch(0.35 0.06 55 / 0.22),
+      0 0 0 1px oklch(0.735 0.088 78 / 0.35);
+  }
+}
+
+/* Accessible reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

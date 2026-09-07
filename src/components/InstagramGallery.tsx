@@ -22,7 +22,7 @@ export function InstagramGallery() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: (i % 6) * 0.06 }}
-          className="group relative aspect-square overflow-hidden rounded-2xl"
+          className="group relative aspect-square overflow-hidden rounded-2xl shadow-soft"
         >
           <img
             src={src}
@@ -30,10 +30,10 @@ export function InstagramGallery() {
             loading="lazy"
             width={800}
             height={1000}
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+            className="img-luxury-zoom h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
-          <span className="absolute inset-0 grid place-items-center bg-brown/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <Instagram className="text-secondary" size={22} />
+          <span className="absolute inset-0 grid place-items-center bg-brown/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-[1px]">
+            <Instagram className="text-secondary transition-transform duration-300 group-hover:scale-110" size={22} />
           </span>
         </motion.a>
       ))}

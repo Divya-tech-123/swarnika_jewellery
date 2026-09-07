@@ -5,15 +5,15 @@ import type { Category } from "@/lib/shop-data";
 export function CategoryCard({ category, index = 0 }: { category: Category; index?: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay: (index % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ y: -8 }}
+      whileHover={{ y: -5 }}
     >
       <Link
         to={category.to}
-        className="group block overflow-hidden rounded-3xl border border-transparent bg-card shadow-soft transition-all duration-300 hover:border-gold/60 hover:shadow-lift"
+        className="card-luxury-lift group block overflow-hidden rounded-3xl border border-border/60 bg-card shadow-soft hover:border-gold/60"
       >
         <div className="aspect-square overflow-hidden bg-secondary">
           <img
@@ -22,7 +22,7 @@ export function CategoryCard({ category, index = 0 }: { category: Category; inde
             loading="lazy"
             width={800}
             height={1000}
-            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+            className="img-luxury-zoom h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-104"
           />
         </div>
         <div className="p-4 text-center">

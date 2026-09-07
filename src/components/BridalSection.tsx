@@ -49,14 +49,14 @@ export function BridalSection() {
           <div className="mt-8 space-y-0">
             {pieces.map((piece, i) => (
               <Reveal key={piece.name} delay={i * 0.07}>
-                <div className="group flex items-center justify-between border-b border-gold/25 py-4">
+                <div className="group flex items-center justify-between border-b border-gold/25 py-4 transition-colors hover:border-gold/60">
                   <div>
-                    <p className="font-display text-lg text-foreground transition-colors group-hover:text-gold-deep">
+                    <p className="font-display text-lg text-foreground transition-colors duration-300 group-hover:text-gold-deep">
                       {piece.name}
                     </p>
                     <p className="font-sans text-xs text-muted-foreground">{piece.note}</p>
                   </div>
-                  <span className="font-display text-sm text-gold-deep">0{i + 1}</span>
+                  <span className="font-display text-sm text-gold-deep transition-transform duration-300 group-hover:scale-110">0{i + 1}</span>
                 </div>
               </Reveal>
             ))}
@@ -65,7 +65,7 @@ export function BridalSection() {
           <Reveal delay={0.2}>
             <Link
               to="/bridal"
-              className="mt-8 inline-block rounded-full bg-primary px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-primary-foreground transition-colors hover:bg-brown"
+              className="btn-luxury mt-8 inline-block rounded-full bg-primary px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-primary-foreground hover:bg-brown shadow-soft"
             >
               View Bridal Collection
             </Link>

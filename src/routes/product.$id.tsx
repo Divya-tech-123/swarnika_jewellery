@@ -80,7 +80,7 @@ function ProductDetailPage() {
           <img
             src={product.image}
             alt={product.name}
-            className="aspect-square h-full w-full object-cover"
+            className="img-luxury-zoom aspect-square h-full w-full object-cover hover:scale-104 transition-transform duration-700 ease-out"
           />
         </div>
 
@@ -142,7 +142,7 @@ function ProductDetailPage() {
                         key={v}
                         type="button"
                         onClick={() => setSelectedVariant(v)}
-                        className={`rounded-full border px-3.5 py-1.5 font-sans text-xs font-medium transition-all ${
+                        className={`rounded-full border px-3.5 py-1.5 font-sans text-xs font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
                           active
                             ? "border-gold-deep bg-primary text-primary-foreground shadow-sm"
                             : "border-border/80 bg-background text-foreground hover:border-gold"
@@ -163,7 +163,7 @@ function ProductDetailPage() {
                   type="button"
                   aria-label="Decrease quantity"
                   onClick={() => setQty((prev) => Math.max(1, prev - 1))}
-                  className="grid h-8 w-8 place-items-center rounded-full hover:bg-background text-foreground transition-colors"
+                  className="grid h-8 w-8 place-items-center rounded-full hover:bg-background text-foreground transition-all duration-200 hover:scale-110 active:scale-95"
                 >
                   <Minus size={13} />
                 </button>
@@ -174,7 +174,7 @@ function ProductDetailPage() {
                   type="button"
                   aria-label="Increase quantity"
                   onClick={() => setQty((prev) => prev + 1)}
-                  className="grid h-8 w-8 place-items-center rounded-full hover:bg-background text-foreground transition-colors"
+                  className="grid h-8 w-8 place-items-center rounded-full hover:bg-background text-foreground transition-all duration-200 hover:scale-110 active:scale-95"
                 >
                   <Plus size={13} />
                 </button>
@@ -188,10 +188,10 @@ function ProductDetailPage() {
                 type="button"
                 aria-label={wished ? "Remove from wishlist" : "Add to wishlist"}
                 onClick={() => toggleWishlist(product.id)}
-                className={`grid h-12 w-12 shrink-0 place-items-center rounded-full border transition-colors ${
+                className={`icon-btn-subtle grid h-12 w-12 shrink-0 place-items-center rounded-full border transition-all ${
                   wished
                     ? "border-destructive bg-destructive/10 text-destructive"
-                    : "border-gold/40 hover:bg-secondary text-muted-foreground"
+                    : "border-gold/40 hover:bg-secondary text-muted-foreground hover:border-gold hover:text-foreground"
                 }`}
               >
                 <Heart size={18} fill={wished ? "currentColor" : "none"} />
@@ -200,7 +200,7 @@ function ProductDetailPage() {
               <button
                 type="button"
                 onClick={handleAddToCart}
-                className="flex flex-1 items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 font-sans text-xs font-medium tracking-wide text-primary-foreground transition-all hover:bg-brown shadow-soft active:scale-98"
+                className="btn-luxury flex flex-1 items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 font-sans text-xs font-medium tracking-wide text-primary-foreground hover:bg-brown shadow-soft"
               >
                 {added ? (
                   <>
@@ -216,7 +216,7 @@ function ProductDetailPage() {
               <Link
                 to="/checkout"
                 onClick={() => addToCart(product.id, qty, selectedVariant)}
-                className="flex flex-1 items-center justify-center gap-2 rounded-full border border-gold/60 bg-background px-6 py-3.5 font-sans text-xs font-medium tracking-wide text-gold-deep transition-all hover:bg-gold-deep hover:text-white active:scale-98"
+                className="btn-luxury flex flex-1 items-center justify-center gap-2 rounded-full border border-gold/60 bg-background px-6 py-3.5 font-sans text-xs font-medium tracking-wide text-gold-deep hover:bg-gold-deep hover:text-white"
               >
                 <Zap size={16} /> Buy Now
               </Link>

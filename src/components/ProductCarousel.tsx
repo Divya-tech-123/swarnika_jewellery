@@ -32,14 +32,14 @@ export function ProductCarousel({ items }: { items: Product[] }) {
         <button
           aria-label="Previous"
           onClick={() => scrollBy(-1)}
-          className="grid h-10 w-10 place-items-center rounded-full border border-gold/40 text-gold-deep transition-colors hover:bg-card"
+          className="icon-btn-subtle grid h-10 w-10 place-items-center rounded-full border border-gold/40 text-gold-deep hover:bg-card hover:border-gold hover:shadow-xs"
         >
           <ChevronLeft size={18} />
         </button>
         <button
           aria-label="Next"
           onClick={() => scrollBy(1)}
-          className="grid h-10 w-10 place-items-center rounded-full border border-gold/40 text-gold-deep transition-colors hover:bg-card"
+          className="icon-btn-subtle grid h-10 w-10 place-items-center rounded-full border border-gold/40 text-gold-deep hover:bg-card hover:border-gold hover:shadow-xs"
         >
           <ChevronRight size={18} />
         </button>

@@ -92,7 +92,7 @@ function Home() {
           <Reveal delay={0.2} className="mt-10 text-center">
             <Link
               to="/collections"
-              className="inline-block rounded-full border border-gold/60 px-7 py-3.5 text-sm text-gold-deep transition-colors hover:bg-card"
+              className="btn-luxury inline-block rounded-full border border-gold/60 px-7 py-3.5 text-sm font-medium text-gold-deep hover:bg-card hover:border-gold"
             >
               View All Jewellery
             </Link>
@@ -106,9 +106,9 @@ function Home() {
           title="New Arrivals"
           subtitle="Fresh designs added to our studio this month. Swipe to explore."
         />
-        <div className="mt-10">
+        <Reveal delay={0.1} className="mt-10">
           <ProductCarousel items={newArrivals} />
-        </div>
+        </Reveal>
       </section>
 
       <BridalSection />
@@ -136,14 +136,14 @@ function Home() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <div className="overflow-hidden rounded-[2rem] border border-gold/30 shadow-soft">
+            <div className="group overflow-hidden rounded-[2rem] border border-gold/30 shadow-soft">
               <img
                 src={craft}
                 alt="Artisan hand-finishing gold jewellery at a workbench"
                 loading="lazy"
                 width={1200}
                 height={900}
-                className="h-full w-full object-cover"
+                className="img-luxury-zoom h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-104"
               />
             </div>
           </Reveal>
@@ -165,7 +165,7 @@ function Home() {
               </p>
               <Link
                 to="/collections"
-                className="mt-8 inline-block rounded-full border border-gold/60 px-7 py-3.5 text-sm text-gold-deep transition-colors hover:bg-secondary"
+                className="btn-luxury mt-8 inline-block rounded-full border border-gold/60 px-7 py-3.5 text-sm font-medium text-gold-deep hover:bg-secondary hover:border-gold"
               >
                 Discover Our Story
               </Link>
@@ -177,7 +177,9 @@ function Home() {
       <section className="texture-paper py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading eyebrow="Testimonials" title="What Our Customers Say" />
-          <TestimonialCarousel />
+          <Reveal delay={0.1}>
+            <TestimonialCarousel />
+          </Reveal>
         </div>
       </section>
 

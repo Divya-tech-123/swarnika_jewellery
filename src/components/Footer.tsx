@@ -72,7 +72,7 @@ export function Footer() {
                   key={i}
                   href="#"
                   aria-label="Social link"
-                  className="grid h-9 w-9 place-items-center rounded-full border border-gold/40 text-gold-deep transition-colors hover:bg-card"
+                  className="icon-btn-subtle grid h-9 w-9 place-items-center rounded-full border border-gold/40 text-gold-deep transition-all duration-200 hover:bg-card hover:border-gold hover:shadow-xs"
                 >
                   <Icon size={16} />
                 </a>
@@ -88,7 +88,7 @@ export function Footer() {
                   <li key={l.label}>
                     <Link
                       to={l.to}
-                      className="text-sm text-muted-foreground transition-colors hover:text-gold-deep"
+                      className="inline-block text-sm text-muted-foreground transition-all duration-200 hover:text-gold-deep hover:translate-x-1"
                     >
                       {l.label}
                     </Link>
@@ -117,9 +117,9 @@ export function Footer() {
                 type="email"
                 required
                 placeholder="Your email address"
-                className="min-w-0 flex-1 rounded-full border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-gold"
+                className="min-w-0 flex-1 rounded-full border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-gold transition-colors duration-200"
               />
-              <button className="shrink-0 rounded-full bg-primary px-5 py-2.5 text-sm text-primary-foreground transition-colors hover:bg-brown">
+              <button className="btn-luxury shrink-0 rounded-full bg-primary px-5 py-2.5 text-sm text-primary-foreground hover:bg-brown shadow-soft">
                 Subscribe
               </button>
             </form>
@@ -127,17 +127,19 @@ export function Footer() {
         </div>
 
         <div className="gold-rule mt-10" />
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Swarnika Jewellers. All prices inclusive of GST. BIS
-          hallmarked gold · IGI certified diamonds.
+
+        <p className="mt-2 text-center text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Swarnika Jewellers.
+          All prices inclusive of GST. BIS hallmarked gold · IGI certified diamonds.
         </p>
-        <p className="mt-2 text-center text-[0.7rem] tracking-wide text-muted-foreground/80 sm:text-xs">
+
+        <p className="mt-3 text-center text-sm tracking-wide text-muted-foreground/80 sm:text-base">
           Powered by{" "}
           <a
             href="https://autofyagency.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-gold-deep transition-colors hover:underline"
+            className="ml-1 inline-block text-lg font-extrabold text-gold-deep transition-all duration-300 hover:scale-105 hover:text-brown sm:text-xl"
           >
             Autofy.ai
           </a>
