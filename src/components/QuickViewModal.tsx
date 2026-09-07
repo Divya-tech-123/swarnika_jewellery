@@ -48,7 +48,7 @@ export function QuickViewModal() {
     if (quickViewProduct) {
       setQty(1);
       const variants = getVariantsForCategory(quickViewProduct.category);
-      setSelectedVariant(variants[0]);
+      setSelectedVariant(variants[0] || "");
       setAddedAnimation(false);
     }
   }, [quickViewProduct]);

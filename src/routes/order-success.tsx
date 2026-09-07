@@ -66,7 +66,7 @@ function OrderSuccessPage() {
 
     // 3. Fallback to latest order
     if (orders.length > 0) {
-      setOrder(orders[0]);
+      setOrder(orders[0] ?? null);
     }
   }, [orderId, orders]);
 

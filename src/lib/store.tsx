@@ -193,12 +193,13 @@ export function ShopProvider({ children }: { children: ReactNode }) {
   }, [orders, ready]);
 
   const value = useMemo<ShopStore>(() => {
-    const cartProducts = cart
-      .map((line) => {
-        const product = products.find((p) => p.id === line.id);
-        return product ? { product, qty: line.qty, variant: line.variant } : null;
-      })
-      .filter((v): v is { product: Product; qty: number; variant?: string } => v !== null);
+    const cartProducts: { product: Product; qty: number; variant?: string }[] = [];
+    for (const line of cart) {
+      const product = products.find((p) => p.id === line.id);
+      if (product) {
+        cartProducts.push({ product, qty: line.qty, variant: line.variant });
+      }
+    }
 
     const cartSubtotal = cartProducts.reduce((sum, l) => sum + l.product.price * l.qty, 0);
     const cartMrpSavings = cartProducts.reduce(
